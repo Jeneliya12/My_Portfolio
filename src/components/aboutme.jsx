@@ -28,11 +28,11 @@ function AboutMe() {
         </div>
 
         {/* Picture Column */}
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center mt-10">
           <img
             src="jen.jpg"
             alt="Jeneliya Gurung"
-            className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg shadow-lg rounded-lg"
+            className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg shadow-lg"
           />
         </div>
       </div>

@@ -4,7 +4,7 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="shadow-md text-black py-4">
+    <header className="fixed top-0 left-0 w-full shadow-md text-black py-4 bg-white z-50">
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-0">
         {/* Logo Image */}
         <a href="/" className="flex items-center">
