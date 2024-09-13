@@ -34,7 +34,7 @@ function Header() {
 
         {/* Navigation Links */}
         <ul
-          className={`md:flex md:space-x-4 absolute md:relative bg-white md:bg-transparent w-full md:w-auto md:flex-row flex-col md:flex md:items-center md:space-y-0 space-y-4 md:space-x-4 transition-transform duration-300 ease-in-out ${
+          className={`md:flex md:space-x-4 absolute md:relative bg-white md:bg-transparent w-full md:w-auto md:flex-row flex-col md:items-center md:space-y-0 space-y-4 transition-transform duration-300 ease-in-out ${
             isOpen ? "top-16" : "-top-full"
           }`}
         >
@@ -59,7 +59,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="Jeneliya_Gurung_Resume.pdf" className="hover:underline">
+            <a href="resume.pdf" className="hover:underline">
               Resume
             </a>
           </li>
