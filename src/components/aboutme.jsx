@@ -30,7 +30,7 @@ function AboutMe() {
         {/* Picture Column */}
         <div className="flex justify-center items-center">
           <img
-            src="/jen.jpg"
+            src="jen.jpg"
             alt="Jeneliya Gurung"
             className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg shadow-lg rounded-lg"
           />

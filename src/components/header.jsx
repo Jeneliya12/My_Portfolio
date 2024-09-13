@@ -8,7 +8,7 @@ function Header() {
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-0">
         {/* Logo Image */}
         <a href="/" className="flex items-center">
-          <img src="/logo.png" alt="Logo" className="h-10" />
+          <img src="logo.png" alt="Logo" className="h-10" />
         </a>
 
         {/* Hamburger Icon */}

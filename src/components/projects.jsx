@@ -10,7 +10,7 @@ const Projects = () => (
           {/* Image */}
           <div className="md:w-1/3 flex-shrink-0 mb-4 md:mb-0">
             <img
-              src="/project1.png"
+              src="project1.png"
               alt="Weather App"
               className="w-full h-auto rounded-md object-cover"
             />
@@ -26,7 +26,7 @@ const Projects = () => (
               forecasts. It allows users to search for weather data by location
               or by using their current geographic location.
             </p>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <div className="text-gray-700 mb-4 text-sm sm:text-base">
               <strong>Features:</strong>
               <ul className="list-disc list-inside ml-5">
                 <li>
@@ -55,7 +55,7 @@ const Projects = () => (
                   the user's current location.
                 </li>
               </ul>
-            </p>
+            </div>
             <p className="text-gray-700 mb-4 text-sm sm:text-base">
               This project utilizes the{" "}
               <a
@@ -100,7 +100,7 @@ const Projects = () => (
               API and styled using Bootstrap and custom CSS, this application
               provides an intuitive user experience for financial management.
             </p>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <div className="text-gray-700 mb-4 text-sm sm:text-base">
               <strong>Features:</strong>
               <ul className="list-disc list-inside ml-5">
                 <li>
@@ -134,7 +134,7 @@ const Projects = () => (
                   and view budget and expenses in the selected currency.
                 </li>
               </ul>
-            </p>
+            </div>
             <a
               href="https://github.com/Jeneliya12/BudgetAllocation.git"
               className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
@@ -167,7 +167,7 @@ const Projects = () => (
               It demonstrates key functionality in e-commerce development and
               user interface design.
             </p>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <div className="text-gray-700 mb-4 text-sm sm:text-base">
               <strong>Features:</strong>
               <ul className="list-disc list-inside ml-5">
                 <li>
@@ -189,7 +189,7 @@ const Projects = () => (
                   user experience with clear feedback on their order.
                 </li>
               </ul>
-            </p>
+            </div>
             <p className="text-gray-700 mb-4 text-sm sm:text-base">
               This project utilizes the{" "}
               <a
@@ -198,12 +198,12 @@ const Projects = () => (
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
               >
-                Figma Design of Product List With Cart
+                Frontend Mentor design challenge
               </a>{" "}
-              to create the UI/UX.
+              to create a responsive and interactive shopping cart experience.
             </p>
             <a
-              href="https://github.com/steamnp/bfs56/tree/jeneliya"
+              href="https://github.com/Jeneliya12/product-list.git"
               className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
             >
               View Project
