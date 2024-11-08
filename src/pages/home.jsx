@@ -1,22 +1,26 @@
-import React from "react";
-import Header from "../components/header";
-import AboutMe from "../components/aboutme";
-import Skills from "../components/skills";
-import Contact from "../components/contact";
-import Projects from "../components/projects";
-import Footer from "../components/footer";
+import { useState } from "react";
+import Header from "../components/Header";
+import AboutMe from "../components/AboutMe";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function Home() {
+  const [activeLink, setActiveLink] = useState("#about");
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
   return (
-    <div className="font-sans antialiased overflow-x-hidden">
-      <Header />
-      <main className="bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 shadow-lg rounded-lg">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <AboutMe />
-          <Skills />
-          <Projects />
-          <Contact />
-        </div>
+    <div>
+      <Header activeLink={activeLink} handleLinkClick={handleLinkClick} />
+      <main>
+        <AboutMe />
+        <Skills activeLink={activeLink} />
+        <Projects activeLink={activeLink} />
+        <Contact activeLink={activeLink} />
       </main>
       <Footer />
     </div>

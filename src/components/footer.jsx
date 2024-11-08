@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="bg-gray-500 shadow-lg py-8">
+  <footer className="bg-gray-900 shadow-lg py-8">
     <div className="container mx-auto px-4">
       {/* Site Information */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8">
@@ -24,12 +24,6 @@ const Footer = () => (
               className="hover:underline"
             >
               gurungjeneliya@gmail.com
-            </a>
-          </p>
-          <p className="mt-1 text-gray-400 text-sm sm:text-base">
-            Phone:{" "}
-            <a href="tel:+123456789" className="hover:underline">
-              +1 251-373-6731
             </a>
           </p>
         </div>

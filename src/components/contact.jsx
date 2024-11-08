@@ -1,8 +1,14 @@
-function Contact() {
+function Contact({ activeLink }) {
   return (
     <section id="contact" className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800">
+        <h2
+          className={`text-4xl font-bold text-center mb-12 relative ${
+            activeLink === "#contact"
+              ? "after:content-[''] after:block after:mx-auto after:mt-2 after:h-[4px] after:bg-orange-500 after:w-16"
+              : ""
+          }`}
+        >
           Contact
         </h2>
         <form
@@ -10,10 +16,11 @@ function Contact() {
           method="POST"
           className="w-full max-w-lg md:max-w-2xl mx-auto space-y-6 bg-white p-6 sm:p-8 rounded-lg shadow-lg"
         >
+          {/* Name Field */}
           <div>
             <label
               htmlFor="name"
-              className="block text-gray-700 text-sm sm:text-base font-medium mb-2"
+              className="block text-black text-sm sm:text-base font-medium mb-2"
             >
               Your Name
             </label>
@@ -27,6 +34,7 @@ function Contact() {
             />
           </div>
 
+          {/* Email Field */}
           <div>
             <label
               htmlFor="email"
@@ -44,6 +52,7 @@ function Contact() {
             />
           </div>
 
+          {/* Message Field */}
           <div>
             <label
               htmlFor="message"
@@ -61,9 +70,10 @@ function Contact() {
             ></textarea>
           </div>
 
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-gray-600 text-white py-3 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300"
+            className="w-full bg-orange-500 text-white py-3 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300"
           >
             Send
           </button>

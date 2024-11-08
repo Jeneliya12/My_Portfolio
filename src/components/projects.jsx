@@ -1,8 +1,11 @@
-const Projects = () => (
-  <section id="projects" className="py-16 bg-gray-50">
+const Projects = ({activeLink}) => (
+  <section id="projects" className="py-16">
     <div className="container mx-auto px-4">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
-        Featured Projects
+      <h2 className={`text-4xl font-bold text-center mb-12 relative ${
+      activeLink === "#projects" ? "after:content-[''] after:block after:mx-auto after:mt-2 after:h-[4px] after:bg-orange-500 after:w-16 " : ""
+      }`}
+      >
+      Featured Projects
       </h2>
       <div className="space-y-8">
         {/* Project 1 */}
@@ -20,13 +23,13 @@ const Projects = () => (
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Weather App
             </h3>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <p className="text-black mb-4 text-sm sm:text-base">
               A React application for viewing weather information. This project
               displays current weather conditions, hourly forecasts, and weekly
               forecasts. It allows users to search for weather data by location
               or by using their current geographic location.
             </p>
-            <div className="text-gray-700 mb-4 text-sm sm:text-base">
+            <div className="text-black mb-4 text-sm sm:text-base">
               <strong>Features:</strong>
               <ul className="list-disc list-inside ml-5">
                 <li>
@@ -56,7 +59,7 @@ const Projects = () => (
                 </li>
               </ul>
             </div>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <p className="text-black mb-4 text-sm sm:text-base">
               This project utilizes the{" "}
               <a
                 href="https://openweathermap.org/api"
@@ -70,7 +73,7 @@ const Projects = () => (
             </p>
             <a
               href="https://github.com/Jeneliya12/weatherapp.git"
-              className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
+              className="inline-block bg-orange-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
             >
               View Project
             </a>
@@ -92,7 +95,7 @@ const Projects = () => (
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Budget Allocation
             </h3>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <p className="text-black mb-4 text-sm sm:text-base">
               A comprehensive React application designed to manage and track
               budgets effectively. This project allows users to allocate budgets
               to various departments, adjust budgets dynamically, and visualize
@@ -100,7 +103,7 @@ const Projects = () => (
               API and styled using Bootstrap and custom CSS, this application
               provides an intuitive user experience for financial management.
             </p>
-            <div className="text-gray-700 mb-4 text-sm sm:text-base">
+            <div className="text-black mb-4 text-sm sm:text-base">
               <strong>Features:</strong>
               <ul className="list-disc list-inside ml-5">
                 <li>
@@ -137,7 +140,7 @@ const Projects = () => (
             </div>
             <a
               href="https://github.com/Jeneliya12/BudgetAllocation.git"
-              className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
+              className="inline-block bg-orange-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
             >
               View Project
             </a>
@@ -159,7 +162,7 @@ const Projects = () => (
             <h3 className="text-xl sm:text-2xl font-semibold mb-4">
               Product List with Cart
             </h3>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <p className="text-black mb-4 text-sm sm:text-base">
               The "Product List with Cart" project is a web application designed
               to showcase products and manage a shopping cart. Built with React,
               this application allows users to browse a list of products, add
@@ -167,7 +170,7 @@ const Projects = () => (
               It demonstrates key functionality in e-commerce development and
               user interface design.
             </p>
-            <div className="text-gray-700 mb-4 text-sm sm:text-base">
+            <div className="text-black mb-4 text-sm sm:text-base">
               <strong>Features:</strong>
               <ul className="list-disc list-inside ml-5">
                 <li>
@@ -190,7 +193,7 @@ const Projects = () => (
                 </li>
               </ul>
             </div>
-            <p className="text-gray-700 mb-4 text-sm sm:text-base">
+            <p className="text-black mb-4 text-sm sm:text-base">
               This project utilizes the{" "}
               <a
                 href="https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d/hub"
@@ -204,7 +207,7 @@ const Projects = () => (
             </p>
             <a
               href="https://github.com/Jeneliya12/product-list.git"
-              className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
+              className="inline-block bg-orange-500 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 hover:shadow-lg transition-colors duration-300 mt-4"
             >
               View Project
             </a>
