@@ -9,9 +9,9 @@ function Header({ activeLink, handleLinkClick, theme }) {
         theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
-      <nav className="font-bold container mx-auto flex justify-between items-center px-4 md:px-0">
+      <nav className="container mx-auto flex justify-between items-center px-4 md:px-8">
         {/* Logo / Name */}
-        <a href="/" className="flex items-center justify-self-start">
+        <a href="/" className="flex items-center">
           <h1
             className={`text-2xl sm:text-3xl font-extrabold transition-all duration-300 ease-in-out transform hover:scale-105 ${
               theme === "dark" ? "text-white" : "text-black"
@@ -26,7 +26,7 @@ function Header({ activeLink, handleLinkClick, theme }) {
             }}
           >
             <span
-              className="text-base sm:text-lg font-semibold mr-2 text-black"
+              className="text-base sm:text-lg font-semibold mr-2"
               style={{ color: theme === "dark" ? "white" : "black" }}
             >
               SWE.
@@ -37,7 +37,7 @@ function Header({ activeLink, handleLinkClick, theme }) {
 
         {/* Mobile Menu Button */}
         <button
-          className={`block md:hidden focus:outline-none transition-colors duration-300 ${
+          className={`md:hidden focus:outline-none transition-colors duration-300 ${
             theme === "dark" ? "text-white" : "text-black"
           }`}
           onClick={() => setIsOpen(!isOpen)}
@@ -60,72 +60,32 @@ function Header({ activeLink, handleLinkClick, theme }) {
 
         {/* Navigation Links */}
         <ul
-          className={`md:flex md:space-x-4 absolute md:relative bg-${
+          className={`${
+            isOpen ? "top-16 opacity-100" : "-top-full opacity-0"
+          } md:opacity-100 md:relative md:flex md:space-x-6 absolute md:bg-transparent bg-${
             theme === "dark" ? "gray-800" : "white"
-          } md:bg-transparent w-full md:w-auto md:flex-row flex-col md:items-center md:space-y-0 space-y-4 transition-transform duration-300 ease-in-out ${
-            isOpen ? "top-16" : "-top-full"
-          }`}
+          } w-full md:w-auto flex-col md:flex-row items-center md:space-y-0 space-y-4 transition-all duration-300 ease-in-out`}
         >
-          <li>
-            <a
-              href="#about"
-              onClick={() => handleLinkClick("#about")}
-              className={`${
-                activeLink === "#about"
-                  ? theme === "dark"
-                    ? "border-b-4 border-orange-500"
-                    : "border-b-4 border-black"
-                  : ""
-              } hover:text-orange-500 transition-colors duration-300`}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              onClick={() => handleLinkClick("#skills")}
-              className={`${
-                activeLink === "#skills"
-                  ? theme === "dark"
-                    ? "border-b-4 border-orange-500"
-                    : "border-b-4 border-black"
-                  : ""
-              } hover:text-orange-500 transition-colors duration-300`}
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="#projects"
-              onClick={() => handleLinkClick("#projects")}
-              className={`${
-                activeLink === "#projects"
-                  ? theme === "dark"
-                    ? "border-b-4 border-orange-500"
-                    : "border-b-4 border-black"
-                  : ""
-              } hover:text-orange-500 transition-colors duration-300`}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              onClick={() => handleLinkClick("#contact")}
-              className={`${
-                activeLink === "#contact"
-                  ? theme === "dark"
-                    ? "border-b-4 border-orange-500"
-                    : "border-b-4 border-black"
-                  : ""
-              } hover:text-orange-500 transition-colors duration-300`}
-            >
-              Contact
-            </a>
-          </li>
+          {["#about", "#skills", "#projects", "#contact"].map((link, index) => (
+            <li key={link} className="w-full md:w-auto text-center">
+              <a
+                href={link}
+                onClick={() => {
+                  handleLinkClick(link);
+                  setIsOpen(false); // Close menu on mobile after click
+                }}
+                className={`block md:inline ${
+                  activeLink === link
+                    ? theme === "dark"
+                      ? "border-b-4 border-orange-500"
+                      : "border-b-4 border-black"
+                    : ""
+                } hover:text-orange-500 transition-colors duration-300 py-2`}
+              >
+                {link.replace("#", "").charAt(0).toUpperCase() + link.slice(2)}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
