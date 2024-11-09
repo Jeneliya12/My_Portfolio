@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
       },
+      darkMode: "class",
     },
   },
   plugins: [],

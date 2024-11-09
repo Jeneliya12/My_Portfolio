@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const skillsData = {
   Frontend: [
@@ -35,46 +36,90 @@ const skillsData = {
   ],
 };
 
-const Skills = () => (
-  <section id="skills" className="py-16 bg-gray-100">
-    <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center">
+const Skills = ({ activeLink, theme }) => (
+  <section id="skills" className="py-16">
+    <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+      {/* Image Column */}
+      <motion.div
+        className="lg:w-3/5 w-full flex justify-center lg:justify-start mb-10 lg:mb-0"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <img
+          src="skillone.jpg"
+          alt="Skills Illustration"
+          className="w-full max-w-lg h-auto rounded-lg shadow-xl object-cover"
+        />
+      </motion.div>
+
       {/* Skills Column */}
-      <div className="lg:w-1/2 w-full lg:pr-8 space-y-6">
-        <h2 className="text-4xl font-bold mb-8 text-center lg:text-left">
+      <div className="lg:w-1/2 w-full space-y-10">
+        <h2
+          className={`text-4xl font-bold text-center mb-8 relative ${
+            activeLink === "#skills"
+              ? "after:content-[''] after:block after:mx-auto after:mt-2 after:h-[3px] after:bg-orange-500 after:w-20"
+              : ""
+          }`}
+        >
           Skills
         </h2>
-        {Object.keys(skillsData).map((category, idx) => (
-          <div key={idx} className="bg-white p-4 rounded-lg shadow-md mb-4">
-            <h3 className="text-lg font-semibold mb-3 text-gray-800 text-center">
-              {category}
-            </h3>
-            <div className="space-y-3">
-              {skillsData[category].map((skill, index) => (
-                <div key={index} className="flex items-center">
-                  <p className="text-sm font-medium text-gray-700 w-1/3">
-                    {skill.name}
-                  </p>
-                  <div className="relative w-2/3 h-3 bg-gray-200 rounded-full mr-2">
-                    <div
-                      className="absolute top-0 left-0 h-full bg-orange-500 rounded-full"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                  <span className="text-xs text-gray-600">{skill.level}%</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
 
-      {/* Image Column */}
-      <div className="lg:w-1/2 w-full flex justify-center mt-12 lg:mt-0">
-        <img
-          src="skills-image.jpg"
-          alt="Skill Illustration"
-          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto shadow-lg object-cover rounded-lg"
-        />
+        {/* Skill Rows */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {Object.keys(skillsData).map((category, idx) => (
+            <motion.div
+              key={idx}
+              className={`p-5 rounded-lg shadow-lg transition duration-500 ${
+                theme === "dark"
+                  ? "bg-gradient-to-br from-gray-800 to-gray-700"
+                  : "bg-gradient-to-br from-orange-100 to-yellow-200"
+              } transform hover:scale-105 hover:rotate-1`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.3, duration: 0.6 }}
+            >
+              <h3
+                className={`text-xl font-semibold mb-4 text-center ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-800"
+                }`}
+              >
+                {category}
+              </h3>
+              <div className="space-y-3">
+                {skillsData[category].map((skill, index) => (
+                  <div key={index} className="flex items-center space-x-2">
+                    <span
+                      className={`text-sm font-medium w-1/3 ${
+                        theme === "dark" ? "text-gray-300" : "text-gray-700"
+                      }`}
+                    >
+                      {skill.name}
+                    </span>
+                    <div className="relative w-2/3 h-3 bg-gray-200 rounded-full overflow-hidden">
+                      <motion.div
+                        className={`absolute top-0 left-0 h-full rounded-full ${
+                          theme === "dark" ? "bg-orange-400" : "bg-orange-500"
+                        }`}
+                        style={{ width: `${skill.level}%` }}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.level}%` }}
+                        transition={{ duration: 0.8, delay: 0.1 * index }}
+                      />
+                    </div>
+                    <span
+                      className={`text-xs ${
+                        theme === "dark" ? "text-gray-300" : "text-gray-600"
+                      }`}
+                    >
+                      {skill.level}%
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   </section>

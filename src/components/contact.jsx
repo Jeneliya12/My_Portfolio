@@ -1,4 +1,6 @@
-function Contact({ activeLink }) {
+import React from "react";
+
+function Contact({ activeLink, theme }) {
   return (
     <section id="contact" className="py-16">
       <div className="container mx-auto px-4">
@@ -14,13 +16,19 @@ function Contact({ activeLink }) {
         <form
           action="#"
           method="POST"
-          className="w-full max-w-lg md:max-w-2xl mx-auto space-y-6 bg-white p-6 sm:p-8 rounded-lg shadow-lg"
+          className={`w-full max-w-lg md:max-w-2xl mx-auto space-y-6 p-6 sm:p-8 rounded-lg shadow-lg ${
+            theme === "dark"
+              ? "bg-gray-900 text-white border border-white" // Add white border in dark mode
+              : "bg-white text-gray-900 border border-gray-300"
+          }`}
         >
           {/* Name Field */}
           <div>
             <label
               htmlFor="name"
-              className="block text-black text-sm sm:text-base font-medium mb-2"
+              className={`block text-sm sm:text-base font-medium mb-2 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
             >
               Your Name
             </label>
@@ -29,7 +37,11 @@ function Contact({ activeLink }) {
               id="name"
               name="name"
               placeholder="Your Name"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${
+                theme === "dark"
+                  ? "border-gray-700 bg-gray-800 text-white focus:ring-white"
+                  : "border-gray-300 bg-white text-gray-900 focus:ring-blue-500"
+              }`}
               required
             />
           </div>
@@ -38,7 +50,9 @@ function Contact({ activeLink }) {
           <div>
             <label
               htmlFor="email"
-              className="block text-gray-700 text-sm sm:text-base font-medium mb-2"
+              className={`block text-sm sm:text-base font-medium mb-2 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
             >
               Your Email
             </label>
@@ -47,7 +61,11 @@ function Contact({ activeLink }) {
               id="email"
               name="email"
               placeholder="gurungjeneliya@example.com"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${
+                theme === "dark"
+                  ? "border-gray-700 bg-gray-800 text-white focus:ring-white"
+                  : "border-gray-300 bg-white text-gray-900 focus:ring-blue-500"
+              }`}
               required
             />
           </div>
@@ -56,7 +74,9 @@ function Contact({ activeLink }) {
           <div>
             <label
               htmlFor="message"
-              className="block text-gray-700 text-sm sm:text-base font-medium mb-2"
+              className={`block text-sm sm:text-base font-medium mb-2 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-700"
+              }`}
             >
               Your Message
             </label>
@@ -64,7 +84,11 @@ function Contact({ activeLink }) {
               id="message"
               name="message"
               placeholder="Type your message here..."
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${
+                theme === "dark"
+                  ? "border-gray-700 bg-gray-800 text-white focus:ring-white"
+                  : "border-gray-300 bg-white text-gray-900 focus:ring-blue-500"
+              }`}
               rows="6"
               required
             ></textarea>
@@ -73,7 +97,11 @@ function Contact({ activeLink }) {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-orange-500 text-white py-3 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300"
+            className={`w-full py-3 rounded-lg shadow-md focus:outline-none focus:ring-2 transition-colors duration-300 ${
+              theme === "dark"
+                ? "bg-orange-500 text-white hover:bg-orange-600 focus:ring-white"
+                : "bg-orange-500 text-white hover:bg-blue-700 focus:ring-white"
+            }`}
           >
             Send
           </button>
