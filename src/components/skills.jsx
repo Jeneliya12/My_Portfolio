@@ -1,166 +1,80 @@
-const Skills = ({ activeLink }) => (
-  <section id="skills" className="py-16">
-    <div className="container mx-auto px-4">
-      <h2
-        className={`text-4xl font-bold text-center mb-12 relative ${
-          activeLink === "#skills" ? "after:content-[''] after:block after:mx-auto after:mt-2 after:h-[4px] after:bg-orange-500 after:w-[40px]" : ""
-        }`}
-      >
-        Skills
-      </h2>
+import React from "react";
 
-      <div className="space-y-8">
-        {/* Front End Skills Card */}
-        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col md:flex-row items-center">
-          {/* Title */}
-          <div className="md:w-1/4 flex-shrink-0 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Front End</h3>
-          </div>
-          {/* Skills Block */}
-          <div className="md:w-3/4 md:ml-6 flex flex-wrap gap-4">
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              JavaScript
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              TypeScript
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              React
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Next.js
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Figma
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Redux Toolkit
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              HTML
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              CSS
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Tailwind CSS
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Vue.js
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Sass
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Less
-            </span>
-          </div>
-        </div>
+const skillsData = {
+  Frontend: [
+    { name: "HTML5", level: 90 },
+    { name: "CSS3", level: 85 },
+    { name: "JavaScript", level: 90 },
+    { name: "React", level: 85 },
+    { name: "Next.js", level: 80 },
+    { name: "Vue.js", level: 75 },
+    { name: "TypeScript", level: 80 },
+  ],
+  Backend: [
+    { name: "Node.js", level: 85 },
+    { name: "Express.js", level: 80 },
+    { name: "Python", level: 75 },
+    { name: "Django", level: 70 },
+    { name: "Java", level: 65 },
+    { name: "GraphQL", level: 60 },
+  ],
+  Tools: [
+    { name: "Git", level: 90 },
+    { name: "Docker", level: 75 },
+    { name: "Jenkins", level: 70 },
+    { name: "Webpack", level: 65 },
+    { name: "Postman", level: 85 },
+    { name: "CI/CD", level: 75 },
+  ],
+  Database: [
+    { name: "MongoDB", level: 80 },
+    { name: "MySQL", level: 75 },
+    { name: "PostgreSQL", level: 70 },
+    { name: "Firebase", level: 65 },
+    { name: "Redis", level: 60 },
+  ],
+};
 
-        {/* Backend Skills Card */}
-        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col md:flex-row items-center">
-          <div className="md:w-1/4 flex-shrink-0 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Backend</h3>
+const Skills = () => (
+  <section id="skills" className="py-16 bg-gray-100">
+    <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center">
+      {/* Skills Column */}
+      <div className="lg:w-1/2 w-full lg:pr-8 space-y-6">
+        <h2 className="text-4xl font-bold mb-8 text-center lg:text-left">
+          Skills
+        </h2>
+        {Object.keys(skillsData).map((category, idx) => (
+          <div key={idx} className="bg-white p-4 rounded-lg shadow-md mb-4">
+            <h3 className="text-lg font-semibold mb-3 text-gray-800 text-center">
+              {category}
+            </h3>
+            <div className="space-y-3">
+              {skillsData[category].map((skill, index) => (
+                <div key={index} className="flex items-center">
+                  <p className="text-sm font-medium text-gray-700 w-1/3">
+                    {skill.name}
+                  </p>
+                  <div className="relative w-2/3 h-3 bg-gray-200 rounded-full mr-2">
+                    <div
+                      className="absolute top-0 left-0 h-full bg-orange-500 rounded-full"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                  <span className="text-xs text-gray-600">{skill.level}%</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="md:w-3/4 md:ml-6 flex flex-wrap gap-4">
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Node.js
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Express
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Python
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Django
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Flask
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Java
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Spring Boot
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              PHP
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Laravel
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              MongoDB
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              SQL
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              PostgreSQL
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Redis
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              GraphQL
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              RESTful APIs
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              OAuth
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              JWT
-            </span>
-          </div>
-        </div>
+        ))}
+      </div>
 
-        {/* Tools Skills Card */}
-        <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col md:flex-row items-center">
-          <div className="md:w-1/4 flex-shrink-0 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold mb-2">Tools</h3>
-          </div>
-          <div className="md:w-3/4 md:ml-6 flex flex-wrap gap-4">
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Git
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              GitHub
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              GitLab
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Webpack
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Babel
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Docker
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Kubernetes
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              CI/CD
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Jenkins
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Postman
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Nginx
-            </span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded-full">
-              Apache
-            </span>
-          </div>
-        </div>
+      {/* Image Column */}
+      <div className="lg:w-1/2 w-full flex justify-center mt-12 lg:mt-0">
+        <img
+          src="skills-image.jpg"
+          alt="Skill Illustration"
+          className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto shadow-lg object-cover rounded-lg"
+        />
       </div>
     </div>
   </section>
