@@ -1,9 +1,10 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const projectData = [
   {
     image: "project5.png",
-    link: "https://github.com/Jeneliya12/product-list.git",
+    link: "https://github.com/Jeneliya12/E-COMMERCE-FULLSTACK.git",
   },
   {
     image: "project1.png",
@@ -19,24 +20,38 @@ const projectData = [
   },
   {
     image: "project4.png",
-    link: "https://github.com/Jeneliya12/product-list.git",
+    link: "hhttps://github.com/Jeneliya12/-travelRecommendation.git",
   },
   {
     image: "project6.png",
-    link: "https://github.com/Jeneliya12/product-list.git",
+    link: "https://github.com/Jeneliya12/BloodBankingManagementSystem.git",
   },
   {
     image: "project8.png",
-    link: "https://github.com/Jeneliya12/product-list.git",
+    link: "https://github.com/Jeneliya12/Auction-System.git",
   },
   {
     image: "project9.png",
-    link: "https://github.com/Jeneliya12/product-list.git",
+    link: "https://github.com/Jeneliya12/Personal_Financial_Tracker.git",
   },
 ];
 
+const staggeredContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const projectItem = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+};
+
 const Projects = ({ activeLink, theme }) => (
-  <section id="projects" className="py-16">
+  <section id="projects">
     <div className="container mx-auto px-4 text-center">
       <h2
         className={`text-4xl font-bold text-center mb-12 relative ${
@@ -48,23 +63,25 @@ const Projects = ({ activeLink, theme }) => (
         Featured Projects
       </h2>
 
-      {/* Collage Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      {/* Responsive and Animated Project Grid */}
+      <motion.div
+        variants={staggeredContainer}
+        initial="hidden"
+        animate="visible"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto"
+      >
         {projectData.map((project, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={projectItem}
             className={`relative overflow-hidden rounded-lg shadow-lg border-2 ${
               theme === "dark" ? "border-gray-700" : "border-gray-200"
-            } hover:shadow-2xl transition-shadow duration-300 ${
-              index % 3 === 0
-                ? "col-span-2 row-span-2 h-80 md:h-96"
-                : "col-span-1 row-span-1 h-64 md:h-80"
-            }`}
+            } hover:shadow-2xl transition-shadow duration-300`}
           >
             <img
               src={project.image}
               alt={`Project ${index + 1}`}
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
               style={{
                 filter: theme === "dark" ? "brightness(0.8)" : "brightness(1)",
               }}
@@ -79,9 +96,9 @@ const Projects = ({ activeLink, theme }) => (
                 View Project
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   </section>
 );

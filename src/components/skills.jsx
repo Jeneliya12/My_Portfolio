@@ -37,7 +37,7 @@ const skillsData = {
 };
 
 const Skills = ({ activeLink, theme }) => (
-  <section id="skills" className="py-16">
+  <section id="skills">
     <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
       {/* Image Column */}
       <motion.div

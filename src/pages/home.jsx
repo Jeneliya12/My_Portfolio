@@ -28,14 +28,13 @@ function Home() {
       <Header
         activeLink={activeLink}
         handleLinkClick={handleLinkClick}
-        theme={theme} // Pass the theme prop here
+        theme={theme}
       />
 
-      {/* Theme Toggle Switch */}
+      {/* Theme Toggle Switch with Responsive Position */}
       <div
         onClick={toggleTheme}
-        className="fixed top-4 right-4 w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-all duration-300 ease-in-out"
-        style={{ zIndex: 1000 }}
+        className="fixed md:top-4 md:right-4 bottom-4 right-4 w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-all duration-300 ease-in-out z-50"
       >
         <div
           className={`w-5 h-5 rounded-full shadow-md transform transition-all duration-300 ease-in-out ${

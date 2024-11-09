@@ -41,6 +41,7 @@ function Header({ activeLink, handleLinkClick, theme }) {
             theme === "dark" ? "text-white" : "text-black"
           }`}
           onClick={() => setIsOpen(!isOpen)}
+          style={{ zIndex: 50 }}
         >
           <svg
             className="w-6 h-6"
@@ -61,10 +62,11 @@ function Header({ activeLink, handleLinkClick, theme }) {
         {/* Navigation Links */}
         <ul
           className={`${
-            isOpen ? "top-16 opacity-100" : "-top-full opacity-0"
-          } md:opacity-100 md:relative md:flex md:space-x-6 absolute md:bg-transparent bg-${
-            theme === "dark" ? "gray-800" : "white"
-          } w-full md:w-auto flex-col md:flex-row items-center md:space-y-0 space-y-4 transition-all duration-300 ease-in-out`}
+            isOpen ? "flex" : "hidden"
+          } md:flex md:space-x-4 absolute md:relative ${
+            theme === "dark" ? "bg-gray-800" : "bg-white"
+          } md:bg-transparent w-full md:w-auto flex-col md:flex-row items-center md:space-y-0 space-y-4 top-16 md:top-auto transition-transform duration-300 ease-in-out`}
+          style={{ zIndex: 40 }}
         >
           {["#about", "#skills", "#projects", "#contact"].map((link, index) => (
             <li key={link} className="w-full md:w-auto text-center">

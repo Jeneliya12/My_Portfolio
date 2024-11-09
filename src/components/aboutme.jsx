@@ -2,7 +2,7 @@ function AboutMe({ theme }) {
   return (
     <section
       id="about"
-      className={`container mx-auto px-4 py-8 pt-40 ${
+      className={`container mx-auto px-4 py-8 pt-10 pb-4 ${
         theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       } transition-colors duration-500`}
     >
@@ -24,34 +24,7 @@ function AboutMe({ theme }) {
               >
                 Jeneliya
               </span>
-              , and I specialize in full-stack web development with a proven
-              track record of designing, developing, and deploying scalable and
-              responsive web applications. Over the past three years, I've honed
-              my skills in modern front-end technologies like{" "}
-              <span
-                className={`font-semibold ${
-                  theme === "dark" ? "text-orange-400" : "text-orange-600"
-                }`}
-              >
-                React, Next.js, and Vue.js
-              </span>
-              , alongside mastering back-end development with{" "}
-              <span
-                className={`font-semibold ${
-                  theme === "dark" ? "text-orange-400" : "text-orange-600"
-                }`}
-              >
-                Node.js, Python, and Java
-              </span>
-              . My expertise extends to enhancing code quality through{" "}
-              <span
-                className={`font-semibold ${
-                  theme === "dark" ? "text-orange-400" : "text-orange-600"
-                }`}
-              >
-                TypeScript
-              </span>{" "}
-              and optimizing application performance.
+              , and I specialize in full-stack web development...
             </p>
 
             <p className="font-[Lato] text-base sm:text-lg lg:text-xl leading-relaxed">
@@ -70,7 +43,7 @@ function AboutMe({ theme }) {
         </div>
 
         {/* Picture Column */}
-        <div className="flex justify-center items-center mt-10 lg:mt-0">
+        <div className="flex justify-center items-center mt-6 lg:mt-0">
           <img
             src="jen.jpg"
             alt="Jeneliya Gurung"

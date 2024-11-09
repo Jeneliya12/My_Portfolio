@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact({ activeLink, theme }) {
   return (
-    <section id="contact" className="py-16">
+    <section id="contact">
       <div className="container mx-auto px-4">
         <h2
           className={`text-4xl font-bold text-center mb-12 relative ${
@@ -100,7 +100,7 @@ function Contact({ activeLink, theme }) {
             className={`w-full py-3 rounded-lg shadow-md focus:outline-none focus:ring-2 transition-colors duration-300 ${
               theme === "dark"
                 ? "bg-orange-500 text-white hover:bg-orange-600 focus:ring-white"
-                : "bg-orange-500 text-white hover:bg-blue-700 focus:ring-white"
+                : "bg-orange-500 text-white hover:bg-orange-60 focus:ring-white"
             }`}
           >
             Send
