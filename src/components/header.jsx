@@ -1,16 +1,45 @@
 import { useState } from "react";
-function Header({ activeLink, handleLinkClick }) {
+
+function Header({ activeLink, handleLinkClick, theme }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full shadow-md text-black py-4 bg-white z-50 font-bold">
-      <nav className="container mx-auto flex justify-between items-center px-4 md:px-0">
-        <a href="/" className="flex items-center">
-          <img src="logo.png" alt="Logo" className="h-10" />
+    <header
+      className={`fixed top-0 left-0 w-full shadow-md py-4 z-50 font-bold transition-colors duration-300 ${
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
+      }`}
+    >
+      <nav className="font-bold container mx-auto flex justify-between items-center px-4 md:px-0">
+        {/* Logo / Name */}
+        <a href="/" className="flex items-center justify-self-start">
+          <h1
+            className={`text-2xl sm:text-3xl font-extrabold transition-all duration-300 ease-in-out transform hover:scale-105 ${
+              theme === "dark" ? "text-white" : "text-black"
+            }`}
+            style={{
+              fontFamily: "Georgia, serif",
+              letterSpacing: "1px",
+              textShadow:
+                theme === "dark"
+                  ? "2px 2px 4px rgba(0, 0, 0, 0.4)"
+                  : "1px 1px 2px rgba(0, 0, 0, 0.2)",
+            }}
+          >
+            <span
+              className="text-base sm:text-lg font-semibold mr-2 text-black"
+              style={{ color: theme === "dark" ? "white" : "black" }}
+            >
+              SWE.
+            </span>
+            Jeneliya G.
+          </h1>
         </a>
 
+        {/* Mobile Menu Button */}
         <button
-          className="block md:hidden text-black focus:outline-none"
+          className={`block md:hidden focus:outline-none transition-colors duration-300 ${
+            theme === "dark" ? "text-white" : "text-black"
+          }`}
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
@@ -29,8 +58,11 @@ function Header({ activeLink, handleLinkClick }) {
           </svg>
         </button>
 
+        {/* Navigation Links */}
         <ul
-          className={`md:flex md:space-x-4 absolute md:relative bg-white md:bg-transparent w-full md:w-auto md:flex-row flex-col md:items-center md:space-y-0 space-y-4 transition-transform duration-300 ease-in-out ${
+          className={`md:flex md:space-x-4 absolute md:relative bg-${
+            theme === "dark" ? "gray-800" : "white"
+          } md:bg-transparent w-full md:w-auto md:flex-row flex-col md:items-center md:space-y-0 space-y-4 transition-transform duration-300 ease-in-out ${
             isOpen ? "top-16" : "-top-full"
           }`}
         >
@@ -39,8 +71,12 @@ function Header({ activeLink, handleLinkClick }) {
               href="#about"
               onClick={() => handleLinkClick("#about")}
               className={`${
-                activeLink === "#about" ? "border-b-4 border-black" : ""
-              }`}
+                activeLink === "#about"
+                  ? theme === "dark"
+                    ? "border-b-4 border-orange-500"
+                    : "border-b-4 border-black"
+                  : ""
+              } hover:text-orange-500 transition-colors duration-300`}
             >
               About
             </a>
@@ -50,8 +86,12 @@ function Header({ activeLink, handleLinkClick }) {
               href="#skills"
               onClick={() => handleLinkClick("#skills")}
               className={`${
-                activeLink === "#skills" ? "border-b-4 border-black" : ""
-              }`}
+                activeLink === "#skills"
+                  ? theme === "dark"
+                    ? "border-b-4 border-orange-500"
+                    : "border-b-4 border-black"
+                  : ""
+              } hover:text-orange-500 transition-colors duration-300`}
             >
               Skills
             </a>
@@ -61,8 +101,12 @@ function Header({ activeLink, handleLinkClick }) {
               href="#projects"
               onClick={() => handleLinkClick("#projects")}
               className={`${
-                activeLink === "#projects" ? "border-b-4 border-black" : ""
-              }`}
+                activeLink === "#projects"
+                  ? theme === "dark"
+                    ? "border-b-4 border-orange-500"
+                    : "border-b-4 border-black"
+                  : ""
+              } hover:text-orange-500 transition-colors duration-300`}
             >
               Projects
             </a>
@@ -72,8 +116,12 @@ function Header({ activeLink, handleLinkClick }) {
               href="#contact"
               onClick={() => handleLinkClick("#contact")}
               className={`${
-                activeLink === "#contact" ? "border-b-4 border-black" : ""
-              }`}
+                activeLink === "#contact"
+                  ? theme === "dark"
+                    ? "border-b-4 border-orange-500"
+                    : "border-b-4 border-black"
+                  : ""
+              } hover:text-orange-500 transition-colors duration-300`}
             >
               Contact
             </a>

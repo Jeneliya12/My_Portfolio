@@ -25,7 +25,11 @@ function Home() {
         theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       } min-h-screen transition-colors duration-300 ease-in-out`}
     >
-      <Header activeLink={activeLink} handleLinkClick={handleLinkClick} />
+      <Header
+        activeLink={activeLink}
+        handleLinkClick={handleLinkClick}
+        theme={theme} // Pass the theme prop here
+      />
 
       {/* Theme Toggle Switch */}
       <div

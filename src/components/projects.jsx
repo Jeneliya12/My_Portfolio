@@ -13,121 +13,58 @@ const Projects = ({ activeLink, theme }) => (
         Featured Projects
       </h2>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           {
             title: "Weather App",
-            description:
-              "A React application for viewing weather information. This project displays current weather conditions, hourly forecasts, and weekly forecasts. It allows users to search for weather data by location or by using their current geographic location.",
-            features: [
-              "Current Weather: Displays current temperature, weather conditions, and an icon representing the weather.",
-              "Hourly Forecast: Shows the weather forecast for the next 24 hours, including temperature and condition.",
-              "Weekly Forecast: Provides a 7-day weather forecast with daily temperatures and conditions.",
-              "Unit Toggle: Allows users to switch between Celsius and Fahrenheit for temperature readings.",
-              "Search Functionality: Users can search for weather data based on a location name or coordinates.",
-              "Geolocation: Fetches weather data based on the user's current location.",
-            ],
             image: "project1.png",
             link: "https://github.com/Jeneliya12/weatherapp.git",
-            apiLink: "https://openweathermap.org/api",
           },
           {
             title: "Budget Allocation",
-            description:
-              "A comprehensive React application designed to manage and track budgets effectively. This project allows users to allocate budgets to various departments, adjust budgets dynamically, and visualize the remaining budget and expenses.",
-            features: [
-              "Add or Reduce Budget: Users can increase or decrease the allocated budget for various departments.",
-              "Dynamic Updates: The budget allocation updates in real-time, ensuring that users always see the current budget status.",
-              "Total Expenses Calculation: Computes the total expenses based on unit prices and quantities.",
-              "Remaining Budget Visualization: Displays the remaining budget after accounting for total expenses.",
-              "Context API Integration: Utilizes React Context API for managing application state.",
-              "Multi-Currency Support: Allows users to view budget and expenses in different currencies.",
-            ],
             image: "project2.png",
             link: "https://github.com/Jeneliya12/BudgetAllocation.git",
           },
           {
             title: "Product List with Cart",
-            description:
-              "A web application designed to showcase products and manage a shopping cart. Built with React, this application allows users to browse products, add items to their cart, adjust quantities, and view order summaries.",
-            features: [
-              "Product display: Presents a grid of products with images, names, categories, and prices.",
-              "Cart Management: Users can view and manage their cart, adjust quantities, and remove items.",
-              "Order Confirmation: Provides a summary of items purchased and total cost in a confirmation modal.",
-            ],
             image: "project3.png",
             link: "https://github.com/Jeneliya12/product-list.git",
           },
         ].map((project, index) => (
           <div
             key={index}
-            className={`p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col md:flex-row items-center ${
-              theme === "dark" ? "bg-gray-800" : "bg-white"
-            }`}
+            className="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transform transition-all duration-300 ease-in-out"
           >
-            <div className="md:w-1/3 flex-shrink-0 mb-4 md:mb-0">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-auto rounded-md object-cover"
-              />
-            </div>
-            <div className="md:w-2/3 md:ml-6">
-              <h3
-                className={`text-xl sm:text-2xl font-semibold mb-4 ${
-                  theme === "dark" ? "text-white" : "text-black"
-                }`}
-              >
-                {project.title}
-              </h3>
-              <p
-                className={`mb-4 text-sm sm:text-base ${
-                  theme === "dark" ? "text-gray-300" : "text-black"
-                }`}
-              >
-                {project.description}
-              </p>
-              <div
-                className={`mb-4 text-sm sm:text-base ${
-                  theme === "dark" ? "text-gray-300" : "text-black"
-                }`}
-              >
-                <strong>Features:</strong>
-                <ul className="list-disc list-inside ml-5">
-                  {project.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-              {project.apiLink && (
-                <p
-                  className={`mb-4 text-sm sm:text-base ${
-                    theme === "dark" ? "text-gray-300" : "text-black"
-                  }`}
-                >
-                  This project utilizes the{" "}
-                  <a
-                    href={project.apiLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
-                  >
-                    OpenWeather API
-                  </a>{" "}
-                  to fetch weather data.
-                </p>
-              )}
+            {/* Project Image */}
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-72 object-cover"
+              style={{
+                filter: theme === "dark" ? "brightness(0.8)" : "brightness(1)",
+              }}
+            />
+
+            {/* Hover Overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out">
               <a
                 href={project.link}
-                className={`inline-block font-semibold py-2 px-4 rounded-lg shadow-md transition-colors duration-300 mt-4 ${
-                  theme === "dark"
-                    ? "bg-orange-500 text-white hover:bg-orange-600"
-                    : "bg-orange-500 text-white hover:bg-blue-700"
-                }`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-lg font-semibold bg-orange-500 py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors duration-300"
               >
                 View Project
               </a>
             </div>
+
+            {/* Project Title */}
+            <h3
+              className={`absolute bottom-4 left-4 text-xl font-bold ${
+                theme === "dark" ? "text-white" : "text-gray-800"
+              }`}
+            >
+              {project.title}
+            </h3>
           </div>
         ))}
       </div>
