@@ -37,8 +37,8 @@ const skillsData = {
 };
 
 const Skills = ({ activeLink, theme }) => (
-  <section id="skills">
-    <div className="container mx-auto px-4 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+  <section id="skills" className="py-20 px-4">
+    <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
       {/* Image Column */}
       <motion.div
         className="lg:w-3/5 w-full flex justify-center lg:justify-start mb-10 lg:mb-0"
@@ -47,16 +47,16 @@ const Skills = ({ activeLink, theme }) => (
         transition={{ duration: 1 }}
       >
         <img
-          src="skillone.jpg"
+          src="/My_Portfolio/skilltwo.jpg"
           alt="Skills Illustration"
-          className="w-full max-w-lg h-auto rounded-lg shadow-xl object-cover"
+          className="w-full max-w-3xl h-auto rounded-3xl shadow-xl object-cover"
         />
       </motion.div>
 
       {/* Skills Column */}
       <div className="lg:w-1/2 w-full space-y-10">
         <h2
-          className={`text-4xl font-bold text-center mb-8 relative ${
+          className={`text-4xl font-bold text-center mb-8 ${
             activeLink === "#skills"
               ? "after:content-[''] after:block after:mx-auto after:mt-2 after:h-[3px] after:bg-orange-500 after:w-20"
               : ""
@@ -74,7 +74,7 @@ const Skills = ({ activeLink, theme }) => (
                 theme === "dark"
                   ? "bg-gradient-to-br from-gray-800 to-gray-700"
                   : "bg-gradient-to-br from-orange-100 to-yellow-200"
-              } transform hover:scale-105 hover:rotate-1`}
+              } transform hover:scale-105`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.3, duration: 0.6 }}

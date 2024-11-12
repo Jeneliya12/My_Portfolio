@@ -1,5 +1,6 @@
 // Home.js
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom"; // Only Routes and Route here
 import Header from "../components/Header";
 import AboutMe from "../components/AboutMe";
 import Skills from "../components/Skills";
@@ -23,7 +24,7 @@ function Home() {
     <div
       className={`${
         theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-gray-900"
-      } min-h-screen transition-colors duration-300 ease-in-out`}
+      } min-h-screen flex flex-col transition-colors duration-300 ease-in-out`}
     >
       <Header
         activeLink={activeLink}
@@ -31,7 +32,7 @@ function Home() {
         theme={theme}
       />
 
-      {/* Theme Toggle Switch with Responsive Position */}
+      {/* Theme Toggle Switch */}
       <div
         onClick={toggleTheme}
         className="fixed md:top-4 md:right-4 bottom-4 right-4 w-12 h-6 flex items-center bg-gray-300 rounded-full p-1 cursor-pointer transition-all duration-300 ease-in-out z-50"
@@ -45,13 +46,17 @@ function Home() {
         ></div>
       </div>
 
-      <main className="space-y-20 py-10">
-        <AboutMe theme={theme} />
-        <Skills theme={theme} activeLink={activeLink} />
-        <Projects theme={theme} activeLink={activeLink} />
-        <Contact theme={theme} activeLink={activeLink} />
+      {/* Main content */}
+      <main className="flex-grow space-y-20 py-10">
+        <Routes>
+          <Route path="/" element={<AboutMe theme={theme} />} />
+          <Route path="/skills" element={<Skills theme={theme} />} />
+          <Route path="/projects" element={<Projects theme={theme} />} />
+          <Route path="/contact" element={<Contact theme={theme} />} />
+        </Routes>
       </main>
 
+      {/* Footer at the bottom */}
       <Footer theme={theme} />
     </div>
   );

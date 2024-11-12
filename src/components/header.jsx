@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header({ activeLink, handleLinkClick, theme }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,33 +8,19 @@ function Header({ activeLink, handleLinkClick, theme }) {
     <header
       className={`fixed top-0 left-0 w-full shadow-md py-4 z-50 font-bold transition-colors duration-300 ${
         theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
-      }`}
+      } font-times`}
     >
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-8">
         {/* Logo / Name */}
-        <a href="/" className="flex items-center">
+        <Link to="/" onClick={() => handleLinkClick("#about")}>
           <h1
             className={`text-2xl sm:text-3xl font-extrabold transition-all duration-300 ease-in-out transform hover:scale-105 ${
               theme === "dark" ? "text-white" : "text-black"
             }`}
-            style={{
-              fontFamily: "Georgia, serif",
-              letterSpacing: "1px",
-              textShadow:
-                theme === "dark"
-                  ? "2px 2px 4px rgba(0, 0, 0, 0.4)"
-                  : "1px 1px 2px rgba(0, 0, 0, 0.2)",
-            }}
           >
-            <span
-              className="text-base sm:text-lg font-semibold mr-2"
-              style={{ color: theme === "dark" ? "white" : "black" }}
-            >
-              SWE.
-            </span>
             Jeneliya G.
           </h1>
-        </a>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -41,14 +28,12 @@ function Header({ activeLink, handleLinkClick, theme }) {
             theme === "dark" ? "text-white" : "text-black"
           }`}
           onClick={() => setIsOpen(!isOpen)}
-          style={{ zIndex: 50 }}
         >
           <svg
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
             <path
               strokeLinecap="round"
@@ -63,29 +48,27 @@ function Header({ activeLink, handleLinkClick, theme }) {
         <ul
           className={`${
             isOpen ? "flex" : "hidden"
-          } md:flex md:space-x-4 absolute md:relative ${
-            theme === "dark" ? "bg-gray-800" : "bg-white"
-          } md:bg-transparent w-full md:w-auto flex-col md:flex-row items-center md:space-y-0 space-y-4 top-16 md:top-auto transition-transform duration-300 ease-in-out`}
-          style={{ zIndex: 40 }}
+          } flex-col md:flex-row md:flex md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-gray-800 md:bg-transparent ${
+            theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
+          } md:space-y-0 space-y-4 py-4 md:py-0 px-4 md:px-0`}
         >
-          {["#about", "#skills", "#projects", "#contact"].map((link, index) => (
-            <li key={link} className="w-full md:w-auto text-center">
-              <a
-                href={link}
+          {[
+            { path: "/", label: "About" },
+            { path: "/skills", label: "Skills" },
+            { path: "/projects", label: "Projects" },
+            { path: "/contact", label: "Contact" },
+          ].map(({ path, label }) => (
+            <li key={path} className="text-center md:text-left">
+              <Link
+                to={path}
                 onClick={() => {
-                  handleLinkClick(link);
+                  handleLinkClick(`#${label.toLowerCase()}`);
                   setIsOpen(false); // Close menu on mobile after click
                 }}
-                className={`block md:inline ${
-                  activeLink === link
-                    ? theme === "dark"
-                      ? "border-b-4 border-orange-500"
-                      : "border-b-4 border-black"
-                    : ""
-                } hover:text-orange-500 transition-colors duration-300 py-2`}
+                className={`hover:text-orange-500 transition-colors duration-300 py-2 block`}
               >
-                {link.replace("#", "").charAt(0).toUpperCase() + link.slice(2)}
-              </a>
+                {label}
+              </Link>
             </li>
           ))}
         </ul>
