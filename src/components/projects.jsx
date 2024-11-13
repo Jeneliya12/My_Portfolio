@@ -68,17 +68,17 @@ const Projects = ({ activeLink, theme }) => (
           filter: theme === "dark" ? "brightness(0.6)" : "brightness(0.3)",
         }}
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white shadow-lg mb-4">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 lg:px-8">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white shadow-lg mb-4">
           Projects Showcase
         </h2>
-        <p className="text-lg md:text-xl lg:text-2xl text-white font-semibold max-w-4xl px-4">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white font-semibold max-w-4xl px-4">
           "Every project is a stepping stone towards creating something
           meaningful and impactful. I’m driven by a desire to build applications
           that solve real problems, spark curiosity, and leave a lasting
           impression."
         </p>
-        <p className="text-md md:text-lg lg:text-xl text-gray-200 mt-4 italic">
+        <p className="text-xs sm:text-sm md:text-md lg:text-lg text-gray-200 mt-4 italic">
           — Excited to work on more projects that inspire and innovate
         </p>
       </div>

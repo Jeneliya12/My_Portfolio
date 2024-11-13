@@ -108,7 +108,7 @@ function Contact({ activeLink, theme }) {
               type="email"
               id="email"
               name="email"
-              placeholder="gurungjeneliya@example.com"
+              placeholder="gurungjeneliya@gmail.com"
               className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${
                 theme === "dark"
                   ? "border-gray-700 bg-gray-800 text-white focus:ring-white"

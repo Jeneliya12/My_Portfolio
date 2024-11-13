@@ -123,7 +123,7 @@ function AboutMe({ theme }) {
               <div key={idx} className="p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-semibold">{job.title}</h3>
                 <p className="text-md font-medium">{job.company}</p>
-                <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mt-4">
+                <ul className="list-disc list-inside text-black dark:text-white mt-4">
                   {job.responsibilities.map((res, i) => (
                     <li key={i}>{res}</li>
                   ))}
