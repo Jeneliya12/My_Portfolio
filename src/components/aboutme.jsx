@@ -123,7 +123,11 @@ function AboutMe({ theme }) {
               <div key={idx} className="p-6 rounded-lg shadow-lg">
                 <h3 className="text-xl font-semibold">{job.title}</h3>
                 <p className="text-md font-medium">{job.company}</p>
-                <ul className="list-disc list-inside text-black dark:text-white mt-4">
+                <ul
+                  className={`list-disc list-inside mt-4 ${
+                    theme === "dark" ? "text-white" : "text-black"
+                  }`}
+                >
                   {job.responsibilities.map((res, i) => (
                     <li key={i}>{res}</li>
                   ))}
@@ -202,7 +206,7 @@ function AboutMe({ theme }) {
         <h2 className="text-5xl font-bold mb-4">Get in Touch</h2>
         <button
           onClick={goToContacts}
-          className="bg-brown-200 text-white px-6 py-5 font-semibold transition duration-300"
+          className="bg-brown-200 text-white px-6 py-5 font-semibold transition duration-300 rounded-3xl"
         >
           Contact Me
         </button>
