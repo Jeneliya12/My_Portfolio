@@ -206,7 +206,7 @@ function AboutMe({ theme }) {
         <h2 className="text-5xl font-bold mb-4">Get in Touch</h2>
         <button
           onClick={goToContacts}
-          className="bg-brown-200 text-white px-6 py-5 font-semibold transition duration-300 rounded-3xl"
+          className="bg-brown-200 text-black px-6 py-5 font-semibold transition duration-300 rounded-3xl"
         >
           Contact Me
         </button>

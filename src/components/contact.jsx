@@ -23,7 +23,7 @@ function Contact({ activeLink, theme }) {
           </p>
           <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
             <a
-              href="mailto:gurungjeneliya@example.com"
+              href="mailto:gurungjeneliya@gmail.com"
               className="text-white text-lg bg-black px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
