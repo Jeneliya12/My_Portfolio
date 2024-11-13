@@ -4,7 +4,7 @@ function Contact({ activeLink, theme }) {
   return (
     <section id="contact">
       {/* Contact Wall with Overlay Text */}
-      <div className="relative overflow-hidden mb-12">
+      <div className="relative overflow-hidden mb-12 pt-20">
         <img
           src="/My_Portfolio/contact.avif"
           alt="Contact Wall Background"
