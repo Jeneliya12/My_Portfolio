@@ -43,17 +43,17 @@ function Contact({ activeLink, theme }) {
           }}
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white shadow-lg">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white shadow-lg leading-tight sm:leading-snug md:leading-snug">
             Want to connect?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white mt-4 mb-6 max-w-2xl">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white mt-4 mb-6 max-w-2xl leading-normal md:leading-relaxed">
             Feel free to contact me via email, Instagram, or LinkedIn for
             inquiries or collaborative interests. Cheers!
           </p>
           <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
             <a
               href="mailto:gurungjeneliya@gmail.com"
-              className="text-white text-lg bg-black px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300"
+              className="text-white text-base sm:text-lg bg-black px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -61,7 +61,7 @@ function Contact({ activeLink, theme }) {
             </a>
             <a
               href="https://www.linkedin.com/in/jeneliya-gurung-26903422a/"
-              className="text-white text-lg bg-orange-400 px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
+              className="text-white text-base sm:text-lg bg-orange-400 px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -69,7 +69,7 @@ function Contact({ activeLink, theme }) {
             </a>
             <a
               href="https://www.instagram.com/jeneliya_gurung_"
-              className="text-white text-lg bg-gray-900 px-4 py-2 rounded-lg shadow-lg hover:bg-pink-600 transition duration-300"
+              className="text-white text-base sm:text-lg bg-gray-900 px-4 py-2 rounded-lg shadow-lg hover:bg-pink-600 transition duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
