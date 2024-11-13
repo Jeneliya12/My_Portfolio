@@ -1,59 +1,41 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 function Contact({ activeLink, theme }) {
+  const form = useRef();
+  const [messageStatus, setMessageStatus] = useState(null);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_d21pjj8",
+        "template_goja61u",
+        form.current,
+        "4wYTLnQhl-pqaxwWR"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setMessageStatus("success");
+          form.current.reset();
+          setTimeout(() => setMessageStatus(null), 3000);
+        },
+        (error) => {
+          console.log(error.text);
+          setMessageStatus("error");
+          setTimeout(() => setMessageStatus(null), 3000);
+          gi;
+        }
+      );
+  };
+
   return (
     <section id="contact">
-      {/* Contact Wall with Overlay Text */}
-      <div className="relative overflow-hidden mb-12 pt-20">
-        <img
-          src="/My_Portfolio/contact.avif"
-          alt="Contact Wall Background"
-          className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover"
-          style={{
-            filter: theme === "dark" ? "brightness(0.6)" : "brightness(0.4)",
-          }}
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white shadow-lg">
-            Want to connect?
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white mt-4 mb-6 max-w-2xl">
-            Feel free to contact me via email, Instagram, or LinkedIn for
-            inquiries or collaborative interests. Cheers!
-          </p>
-          <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-            <a
-              href="mailto:gurungjeneliya@gmail.com"
-              className="text-white text-lg bg-black px-4 py-2 rounded-lg shadow-lg hover:bg-orange-600 transition duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Email
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jeneliya-gurung-26903422a/"
-              className="text-white text-lg bg-orange-400 px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://www.instagram.com/jeneliya_gurung_"
-              className="text-white text-lg bg-gray-900 px-4 py-2 rounded-lg shadow-lg hover:bg-pink-600 transition duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Form */}
       <div className="container mx-auto px-4">
         <h2
-          className={`text-3xl sm:text-4xl font-bold text-center mb-12 relative ${
+          className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${
             activeLink === "#contact"
               ? "after:content-[''] after:block after:mx-auto after:mt-2 after:h-[4px] after:bg-orange-500 after:w-16"
               : ""
@@ -61,9 +43,22 @@ function Contact({ activeLink, theme }) {
         >
           Contact
         </h2>
+
+        {/* Notification message */}
+        {messageStatus === "success" && (
+          <div className="bg-green-100 text-green-700 font-semibold text-center mb-4 p-4 rounded-lg shadow-md">
+            Message sent successfully!
+          </div>
+        )}
+        {messageStatus === "error" && (
+          <div className="bg-red-100 text-red-700 font-semibold text-center mb-4 p-4 rounded-lg shadow-md">
+            An error occurred. Please try again.
+          </div>
+        )}
+
         <form
-          action="#"
-          method="POST"
+          ref={form}
+          onSubmit={sendEmail}
           className={`w-full max-w-lg md:max-w-2xl mx-auto space-y-6 p-6 sm:p-8 rounded-lg shadow-lg ${
             theme === "dark"
               ? "bg-gray-900 text-white border border-white"
@@ -73,7 +68,7 @@ function Contact({ activeLink, theme }) {
           {/* Name Field */}
           <div>
             <label
-              htmlFor="name"
+              htmlFor="from_name"
               className={`block text-sm sm:text-base font-medium mb-2 ${
                 theme === "dark" ? "text-gray-300" : "text-gray-700"
               }`}
@@ -82,8 +77,8 @@ function Contact({ activeLink, theme }) {
             </label>
             <input
               type="text"
-              id="name"
-              name="name"
+              id="from_name"
+              name="from_name"
               placeholder="Your Name"
               className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${
                 theme === "dark"
@@ -108,7 +103,7 @@ function Contact({ activeLink, theme }) {
               type="email"
               id="email"
               name="email"
-              placeholder="gurungjeneliya@gmail.com"
+              placeholder="Your Email"
               className={`w-full p-3 border rounded-lg focus:outline-none focus:ring-2 ${
                 theme === "dark"
                   ? "border-gray-700 bg-gray-800 text-white focus:ring-white"
@@ -142,13 +137,12 @@ function Contact({ activeLink, theme }) {
             ></textarea>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
-            className={`w-full py-3 rounded-lg shadow-md focus:outline-none focus:ring-2 transition-colors duration-300 ${
+            className={`w-full py-3 rounded-lg shadow-md transition-colors duration-300 ${
               theme === "dark"
-                ? "bg-brown-400 text-white hover:bg-orange-600 focus:ring-white"
-                : "bg-brown-400 text-white hover:bg-orange-600 focus:ring-white"
+                ? "bg-brown-400 text-white hover:bg-orange-600"
+                : "bg-brown-400 text-white hover:bg-orange-600"
             }`}
           >
             Send
