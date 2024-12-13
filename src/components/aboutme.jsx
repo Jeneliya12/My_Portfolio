@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function AboutMe({ theme }) {
@@ -25,8 +24,9 @@ function AboutMe({ theme }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div className="flex justify-center items-center mt-6 lg:mt-0 overflow-hidden rounded-3xl">
             <img
-              src="/My_Portfolio/jen.jpg"
+              src="/jen.jpg"
               alt="Jeneliya Gurung"
+              j
               className="w-[90%] lg:w-[80%] max-w-2xl h-auto rounded-3xl shadow-lg object-cover transform transition-transform duration-300 ease-in-out hover:scale-105 hover:rotate-1"
               style={{
                 maxHeight: "60vh",
@@ -42,15 +42,21 @@ function AboutMe({ theme }) {
               Hi there!
             </h1>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-relaxed">
-              I’m Jeneliya, a passionate full-stack developer with expertise in
-              creating high-performing, user-friendly web applications.
+              I am a Full Stack Developer passionate about crafting seamless,
+              user-friendly web applications and scalable backend systems.
             </h2>
             <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">
-              With a background in front-end and back-end technologies, I aim to
-              deliver seamless experiences and impactful solutions.
+              I love working with technologies like Java, Spring Boot, React,
+              and Angular to bring ideas to life. Whether it's building RESTful
+              services, optimizing databases, or leveraging cloud tools like AWS
+              for scalability, I thrive on solving complex problems and
+              delivering innovative solutions. My work reflects a commitment to
+              enhance user experiences, improving system performance, and
+              ensuring reliability. Explore my portfolio to see how I turn ideas
+              into impactful digital experiences!
             </p>
             <div
-              onClick={() => window.open("/My_Portfolio/resume.pdf", "_blank")}
+              onClick={() => window.open("resume.pdf", "_blank")}
               className="mt-4 flex items-center text-brown-400 cursor-pointer space-x-2 hover:text-orange-600 transition-colors duration-300"
             >
               <span className="font-semibold text-lg">View Resume</span>
@@ -81,46 +87,37 @@ function AboutMe({ theme }) {
             enhance user experience and streamline business processes.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 justify-center items-center">
             {/* Each career card */}
             {[
               {
                 title: "Full Stack Developer",
-                company: "Takeo, New York, NY - Apr 2023 - Present",
+                company: "JPMorganChase, New York, NY - Apr 2022 - Present",
                 responsibilities: [
-                  "Led scalable web app development using React, Next.js, TypeScript, Node.js, and Express.",
-                  "Developed RESTful APIs and integrated third-party services.",
-                  "Improved performance using Webpack and Lighthouse.",
-                  "Maintained data management with PostgreSQL and MongoDB.",
-                  "Collaborated in Agile sprints using JIRA and Confluence.",
-                  "Set up CI/CD pipelines using Jenkins and Docker.",
+                  "Enhanced system responsiveness and data retrieval speeds by implementing event-driven patterns and optimizing PostgreSQL queries",
+                  "Developed token-based authentication mechanisms to safeguard sensitive data and ensure secure API interactions",
+                  "Automated CI/CD pipelines and server configurations, reducing errors and accelerating release cycles",
+                  "Integrated logging and analysis tools, enabling seamless system monitoring and quicker troubleshooting",
+                  "Created comprehensive unit and integration tests with JUnit, detecting issues early in the development cycle",
                 ],
               },
               {
-                title: "Software Engineer",
+                title: "Full Stack Developer",
                 company:
-                  "Boost Stride Tech Solutions, Kathmandu, Nepal - Sep 2020 - Dec 2021",
+                  "Cedar Gate Technologies, Greenwich, Connecticut - Aug 2020 - Dec 2021",
                 responsibilities: [
-                  "Implemented microservices with Java, Spring Boot, Docker, and Kubernetes.",
-                  "Developed real-time data analytics with Python, Flask, and Redis.",
-                  "Refactored legacy code with C++.",
-                  "Automated testing with Selenium, JUnit, and Mockito.",
-                  "Enhanced security with OAuth2, JWT, and RBAC.",
-                ],
-              },
-              {
-                title: "Software Engineer Intern",
-                company: "Riddhasoft, Kathmandu, Nepal - Jul 2018 - Dec 2018",
-                responsibilities: [
-                  "Optimized backend APIs, reducing response times by 20%.",
-                  "Enhanced app performance using Angular and Redis caching.",
-                  "Administered MySQL with advanced SQL and transaction management.",
-                  "Created technical documentation, aiding in knowledge transfer.",
-                  "Managed source control with Git.",
+                  "Achieved a 25% performance improvement in data retrieval by implementing distributed data processing with AWS EMR and optimizing SQL queries",
+                  "Developed robust microservices with Spring Boot and modular front-end solutions with React and Angular, ensuring cross-platform compatibility and reliability",
+                  "Reduced build and deployment times through automated CI/CD pipelines using GitHub and Jenkins",
+                  "Designed and implemented secure backend systems with Spring Security, ensuring robust authentication and data protection",
+                  "Automated repetitive server-side tasks with Bash scripting, enhancing deployment efficiency and reducing manual errors",
                 ],
               },
             ].map((job, idx) => (
-              <div key={idx} className="p-6 rounded-lg shadow-lg">
+              <div
+                key={idx}
+                className="p-6 rounded-lg shadow-lg w-full max-w-md mx-auto"
+              >
                 <h3 className="text-xl font-semibold">{job.title}</h3>
                 <p className="text-md font-medium">{job.company}</p>
                 <ul
@@ -176,9 +173,7 @@ function AboutMe({ theme }) {
               <h3 className="text-xl font-semibold">
                 Master of Science in Computer Science, GPA: 3.92
               </h3>
-              <p className="text-md font-medium">
-                Monroe College - Jan 2022 to April 2024
-              </p>
+              <p className="text-md font-medium">Monroe College</p>
               <p>
                 Focusing on software engineering techniques, cloud computing,
                 and scalable application development.
@@ -189,9 +184,7 @@ function AboutMe({ theme }) {
               <h3 className="text-xl font-semibold">
                 Bachelor of Science in Computing, First Class Honors
               </h3>
-              <p className="text-md font-medium">
-                Leeds Beckett University - Sep 2016 to Aug 2020
-              </p>
+              <p className="text-md font-medium">Leeds Beckett University</p>
               <p>
                 Acquired a solid foundation in programming, data structures,
                 algorithms, and software development.

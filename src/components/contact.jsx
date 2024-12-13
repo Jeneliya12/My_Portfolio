@@ -32,10 +32,9 @@ function Contact({ activeLink, theme }) {
 
   return (
     <section id="contact">
-      {/* Contact Wall with Overlay Text */}
       <div className="relative overflow-hidden mb-12 pt-20">
         <img
-          src="/My_Portfolio/contact.avif"
+          src="/contact.avif"
           alt="Contact Wall Background"
           className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover"
           style={{
@@ -79,7 +78,6 @@ function Contact({ activeLink, theme }) {
         </div>
       </div>
 
-      {/* Contact Form */}
       <div className="container mx-auto px-4">
         <h2
           className={`text-3xl sm:text-4xl font-bold text-center mb-12 ${
@@ -91,7 +89,6 @@ function Contact({ activeLink, theme }) {
           Contact
         </h2>
 
-        {/* Notification message */}
         {messageStatus === "success" && (
           <div className="bg-green-100 text-green-700 font-semibold text-center mb-4 p-4 rounded-lg shadow-md">
             Message sent successfully!
@@ -112,7 +109,6 @@ function Contact({ activeLink, theme }) {
               : "bg-white text-gray-900 border border-gray-300"
           }`}
         >
-          {/* Name Field */}
           <div>
             <label
               htmlFor="from_name"
@@ -136,7 +132,6 @@ function Contact({ activeLink, theme }) {
             />
           </div>
 
-          {/* Email Field */}
           <div>
             <label
               htmlFor="from_email"
@@ -160,7 +155,6 @@ function Contact({ activeLink, theme }) {
             />
           </div>
 
-          {/* Message Field */}
           <div>
             <label
               htmlFor="message"

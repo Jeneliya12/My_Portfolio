@@ -1,38 +1,37 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const skillsData = {
   Frontend: [
+    { name: "React", level: 90 },
+    { name: "JavaScript", level: 90 },
     { name: "HTML5", level: 90 },
     { name: "CSS3", level: 85 },
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 85 },
     { name: "Next.js", level: 80 },
-    { name: "Vue.js", level: 75 },
     { name: "TypeScript", level: 80 },
+    { name: "Angular.js", level: 80 },
   ],
   Backend: [
+    { name: "Java", level: 90 },
     { name: "Node.js", level: 85 },
     { name: "Express.js", level: 80 },
     { name: "Python", level: 75 },
     { name: "Django", level: 70 },
-    { name: "Java", level: 65 },
     { name: "GraphQL", level: 60 },
   ],
   Tools: [
     { name: "Git", level: 90 },
+    { name: "Postman", level: 85 },
+    { name: "CI/CD", level: 80 },
     { name: "Docker", level: 75 },
     { name: "Jenkins", level: 70 },
-    { name: "Webpack", level: 65 },
-    { name: "Postman", level: 85 },
-    { name: "CI/CD", level: 75 },
+    { name: "Webpack", level: 70 },
   ],
   Database: [
+    { name: "PostgreSQL", level: 80 },
     { name: "MongoDB", level: 80 },
     { name: "MySQL", level: 75 },
-    { name: "PostgreSQL", level: 70 },
-    { name: "Firebase", level: 65 },
-    { name: "Redis", level: 60 },
+    { name: "Firebase", level: 70 },
+    { name: "Redis", level: 70 },
   ],
 };
 
@@ -47,7 +46,7 @@ const Skills = ({ activeLink, theme }) => (
         transition={{ duration: 1 }}
       >
         <img
-          src="/My_Portfolio/skilltwo.jpg"
+          src="/skilltwo.jpg"
           alt="Skills Illustration"
           className="w-full max-w-3xl h-auto rounded-3xl shadow-xl object-cover"
         />

@@ -3,35 +3,35 @@ import { motion } from "framer-motion";
 
 const projectData = [
   {
-    image: "/My_Portfolio/project5.png",
+    image: "/project5.png",
     link: "https://github.com/Jeneliya12/E-COMMERCE-FULLSTACK.git",
   },
   {
-    image: "/My_Portfolio/project1.png",
+    image: "/project1.png",
     link: "https://github.com/Jeneliya12/weatherapp.git",
   },
   {
-    image: "/My_Portfolio/project2.png",
+    image: "/project2.png",
     link: "https://github.com/Jeneliya12/BudgetAllocation.git",
   },
   {
-    image: "/My_Portfolio/project3.png",
+    image: "/project3.png",
     link: "https://github.com/Jeneliya12/product-list.git",
   },
   {
-    image: "/My_Portfolio/project4.png",
+    image: "/project4.png",
     link: "https://github.com/Jeneliya12/-travelRecommendation.git",
   },
   {
-    image: "/My_Portfolio/project6.png",
+    image: "/project6.png",
     link: "https://github.com/Jeneliya12/BloodBankingManagementSystem.git",
   },
   {
-    image: "/My_Portfolio/project8.png",
+    image: "/project8.png",
     link: "https://github.com/Jeneliya12/Auction-System.git",
   },
   {
-    image: "/My_Portfolio/project9.png",
+    image: "/project9.png",
     link: "https://github.com/Jeneliya12/Personal_Financial_Tracker.git",
   },
 ];
@@ -58,10 +58,9 @@ const hoverEffect = {
 
 const Projects = ({ activeLink, theme }) => (
   <section id="projects" className="relative pt-20">
-    {/* Wall Image */}
     <div className="relative overflow-hidden mb-10">
       <img
-        src="/My_Portfolio/wallproject.avif"
+        src="/wallproject.avif"
         alt="Wall Background"
         className="w-full h-70 md:h-80 lg:h-100 object-cover"
         style={{
@@ -84,7 +83,6 @@ const Projects = ({ activeLink, theme }) => (
       </div>
     </div>
 
-    {/* Projects Grid */}
     <div className="container mx-auto px-4 text-center mt-10">
       <motion.div
         variants={staggeredContainer}
@@ -101,7 +99,6 @@ const Projects = ({ activeLink, theme }) => (
               theme === "dark" ? "border-gray-700" : "border-gray-200"
             }`}
           >
-            {/* Project Image with Flip Animation */}
             <motion.div whileHover={{ rotateY: 180 }} className="w-full h-full">
               <img
                 src={project.image}
@@ -113,7 +110,6 @@ const Projects = ({ activeLink, theme }) => (
                 }}
               />
             </motion.div>
-            {/* Overlay with Zoom and Text Animation */}
             <motion.div
               className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 ease-in-out"
               whileHover={{ scale: 1.05 }}

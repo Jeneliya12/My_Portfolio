@@ -1,6 +1,6 @@
-// Home.js
+// home.jsx
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom"; // Only Routes and Route here
+import { Routes, Route } from "react-router-dom";
 import Header from "../components/Header";
 import AboutMe from "../components/AboutMe";
 import Skills from "../components/Skills";

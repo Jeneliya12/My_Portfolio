@@ -63,7 +63,7 @@ function Header({ activeLink, handleLinkClick, theme }) {
                 to={path}
                 onClick={() => {
                   handleLinkClick(`#${label.toLowerCase()}`);
-                  setIsOpen(false); // Close menu on mobile after click
+                  setIsOpen(false);
                 }}
                 className={`hover:text-orange-500 transition-colors duration-300 py-2 block`}
               >

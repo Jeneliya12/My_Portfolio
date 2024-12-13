@@ -6,5 +6,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
-  base: "/My_Portfolio/",
+  base: "/",
 });
