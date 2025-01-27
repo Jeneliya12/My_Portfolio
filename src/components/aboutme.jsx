@@ -39,21 +39,19 @@ function AboutMe({ theme }) {
             className={`flex flex-col justify-center space-y-4 lg:space-y-6 px-4 lg:px-8 ${textColor}`}
           >
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Hi there!
+              Hello and Welcome!
             </h1>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold leading-relaxed">
-              I am a Full Stack Developer passionate about crafting seamless,
-              user-friendly web applications and scalable backend systems.
+              I’m Jeneliya Gurung, a passionate Full Stack Developer crafting
+              seamless digital solutions.
             </h2>
             <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed">
-              I love working with technologies like Java, Spring Boot, React,
-              and Angular to bring ideas to life. Whether it's building RESTful
-              services, optimizing databases, or leveraging cloud tools like AWS
-              for scalability, I thrive on solving complex problems and
-              delivering innovative solutions. My work reflects a commitment to
-              enhance user experiences, improving system performance, and
-              ensuring reliability. Explore my portfolio to see how I turn ideas
-              into impactful digital experiences!
+              With over 5 years of experience, I specialize in building robust,
+              scalable web applications using Java, Spring Boot, React, and
+              Angular. From designing microservices to optimizing cloud
+              deployments with Docker and Kubernetes, I thrive on solving
+              challenges and creating efficient solutions. Explore my portfolio
+              to see how I transform ideas into impactful digital experiences.
             </p>
             <div
               onClick={() => window.open("resume.pdf", "_blank")}
@@ -87,18 +85,16 @@ function AboutMe({ theme }) {
             enhance user experience and streamline business processes.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 justify-center items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Each career card */}
             {[
               {
-                title: "Full Stack Developer",
-                company: "JPMorganChase, New York, NY - Apr 2022 - Present",
+                title: "Full Stack Jave Developer",
+                company: "JPMorgan Chase, New York, NY - Apr 2023 - Present",
                 responsibilities: [
-                  "Enhanced system responsiveness and data retrieval speeds by implementing event-driven patterns and optimizing PostgreSQL queries",
-                  "Developed token-based authentication mechanisms to safeguard sensitive data and ensure secure API interactions",
-                  "Automated CI/CD pipelines and server configurations, reducing errors and accelerating release cycles",
-                  "Integrated logging and analysis tools, enabling seamless system monitoring and quicker troubleshooting",
-                  "Created comprehensive unit and integration tests with JUnit, detecting issues early in the development cycle",
+                  "Designed and implemented scalable microservices architecture, ensuring seamless integration through RESTful and SOAP web services.",
+                  "Developed dynamic and responsive user interfaces using React and Angular, enhancing user experience with efficient state management tools like Redux and RxJS.",
+                  "Improved application performance by 20% through systematic optimization and performance testing across environments.",
                 ],
               },
               {
@@ -106,25 +102,29 @@ function AboutMe({ theme }) {
                 company:
                   "Cedar Gate Technologies, Greenwich, Connecticut - Aug 2020 - Dec 2021",
                 responsibilities: [
-                  "Achieved a 25% performance improvement in data retrieval by implementing distributed data processing with AWS EMR and optimizing SQL queries",
-                  "Developed robust microservices with Spring Boot and modular front-end solutions with React and Angular, ensuring cross-platform compatibility and reliability",
-                  "Reduced build and deployment times through automated CI/CD pipelines using GitHub and Jenkins",
-                  "Designed and implemented secure backend systems with Spring Security, ensuring robust authentication and data protection",
-                  "Automated repetitive server-side tasks with Bash scripting, enhancing deployment efficiency and reducing manual errors",
+                  "Designed and implemented ETL pipelines with Spring Batch and Apache Kafka, enabling real-time processing of large-scale healthcare data.",
+                  "Developed SOAP-based web services using XML and XSD, ensuring seamless integration with third-party healthcare systems.",
+                  "Created a predictive analytics dashboard using Angular and Highcharts, providing actionable insights through KPI visualization for healthcare administrators.",
+                ],
+              },
+              {
+                title: "Front-End Developer",
+                company:
+                  "Riddhasoft Pvt. Ltd., Kathmandu, Nepal - Feb 2018 - Jun 2020",
+                responsibilities: [
+                  "Designed and developed responsive interfaces using AngularJS and Bootstrap, ensuring compatibility across mobile, tablet, and desktop devices.",
+                  "Optimized front-end performance by implementing lazy loading, enhancing initial page load speed.",
+                  "Collaborated with UI/UX teams to translate wireframes into visually appealing, responsive web pages.",
                 ],
               },
             ].map((job, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-lg shadow-lg w-full max-w-md mx-auto"
+                className="p-6 rounded-lg shadow-lg bg-white w-full"
               >
                 <h3 className="text-xl font-semibold">{job.title}</h3>
-                <p className="text-md font-medium">{job.company}</p>
-                <ul
-                  className={`list-disc list-inside mt-4 ${
-                    theme === "dark" ? "text-white" : "text-black"
-                  }`}
-                >
+                <p className="text-md font-medium mb-4">{job.company}</p>
+                <ul className="list-disc list-inside">
                   {job.responsibilities.map((res, i) => (
                     <li key={i}>{res}</li>
                   ))}
