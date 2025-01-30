@@ -20,7 +20,7 @@ const projectData = [
   },
   {
     image: "/project4.png",
-    link: "https://github.com/Jeneliya12/-travelRecommendation.git",
+    link: "https://github.com/Jeneliya12/digital-news-app",
   },
   {
     image: "/project6.png",
